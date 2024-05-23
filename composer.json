@@ -1,0 +1,35 @@
+{
+    "name": "brunocfalcao/course-beyond-project-management",
+    "description": "Course Beyond Project Management",
+    "keywords": [
+        "brunocfalcao"
+    ],
+    "homepage": "https://github.com/brunocfalcao/course-beyond-project-management",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bruno Falcão",
+            "email": "bruno.c.falcao@brunofalcao.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "brunocfalcao/eduka-nereus": "dev-master",
+        "brunocfalcao/backend-brunofalcao-pro": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "BeyondProjectManagement\\": "src/",
+            "BeyondProjectManagement\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
