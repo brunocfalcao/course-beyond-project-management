@@ -35,11 +35,11 @@
             <h1>Newsletter Header</h1>
         </div>
         <div class="content">
-            <p>1. {{ env('APP_URL') . '/' . Storage::url($subscriber->course->filename_twitter) }}</p>
-            <p>2. {{ eduka_url($subscriber->course->domain) }}</p>
-            <p>3. {{ eduka_url($subscriber->course->domain, Storage::url($subscriber->course->filename_twitter)) }}</p>
-            <p>4. {{  eduka_url($subscriber->course->domain, Storage::disk('public')->url($subscriber->course->filename_email_logo)) }}</p>
-            <p>5. {{  eduka_url($subscriber->course->domain, Storage::disk('public')->url($subscriber->course->filename_email_logo)) }}</p>
+            <p>{{ eduka_url($subscriber->course->domain) }}</p>
+            <p>{{ eduka_url($subscriber->course->domain, Storage::url($subscriber->course->filename_twitter)) }}</p>
+            <p>{{ ':: ' . env('APP_URL') . '/' . Storage::url($subscriber->course->filename_twitter) }}</p>
+            <p>{{  eduka_url($subscriber->course->domain, Storage::disk('public')->url($subscriber->course->filename_email_logo)) }}</p>
+            <p>{{  eduka_url($subscriber->course->domain, Storage::disk('public')->url($subscriber->course->filename_email_logo)) }}</p>
         </div>
         <div class="footer">
             <p>Newsletter Footer</p>
