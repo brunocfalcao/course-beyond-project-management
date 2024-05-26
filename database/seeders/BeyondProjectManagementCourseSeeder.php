@@ -36,7 +36,14 @@ class BeyondProjectManagementCourseSeeder extends Seeder
 
             'progress' => 25,
 
-            'theme_color' => '#1ba37b',
+            'theme' => [
+                'email-primary-color' => '#1338BE',
+                'email-button-color' => '#10414a',
+                'email-button-text-color' => '#23dafc',
+                'email-background-color' => '#10414a',
+                'email-container-color' => '#FFFFFF',
+                'email-text-color' => '#000000',
+            ],
 
             'clarity_code' => null,
 
