@@ -1,13 +1,14 @@
 <x-email::newsletter
-    :theme="$theme"
-    :entity="$course"
+    :entity="$entity"
+    :subject="$subject"
+    :preview="$preview"
 >
-    <x-email::paragraph :theme="$theme">Hello!</x-email::paragraph>
+    <x-email::paragraph :entity="$entity">Hello!</x-email::paragraph>
 
-    <x-email::paragraph :theme="$theme">Thank you for subscribing to <b>{{ $course->name }}</b>!</x-email::paragraph>
+    <x-email::paragraph :entity="$entity">Thank you for subscribing to <b>{{ $entity->name }}</b>!</x-email::paragraph>
 
-    <x-email::button :theme="$theme">Your coucher code: PIONEER</x-email::button>
+    <x-email::button :entity="$entity">Your coucher code: PIONEER</x-email::button>
 
-    <x-email::sub-line :theme="$theme">This voucher code will be active 48h after the course launch</x-email::sub-line>
+    <x-email::sub-line :entity="$entity">This voucher code will be active 48h after the course launch</x-email::sub-line>
 
 </x-email::newsletter>
