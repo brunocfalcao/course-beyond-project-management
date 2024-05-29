@@ -37,12 +37,9 @@ class BeyondProjectManagementCourseSeeder extends Seeder
             'progress' => 25,
 
             'theme' => [
-                'email-text-color' => '#1338BE',
-                'email-button-color' => '#10414a',
-                'email-button-text-color' => '#23dafc',
-                'email-background-color' => '#10414a',
-                'email-container-color' => '#FFFFFF',
-                'email-text-footer-color' => '#FFFFFF',
+                'primary-color' => '#1338BE',
+                'secondary-color' => '#10414a',
+                'danger-color' => '#23dafc',
             ],
 
             'clarity_code' => null,
@@ -73,7 +70,7 @@ class BeyondProjectManagementCourseSeeder extends Seeder
         $course->update([
             'filename_twitter' => $course->canonical.'/'.$twitter,
             'filename_email_logo' => $course->canonical.'/'.$email,
-            'filename_main_logo' => $course->canonical.'/'.$main,
+            'filename_email_logo' => $course->canonical.'/'.$main,
         ]);
 
         $variant = Variant::create([
