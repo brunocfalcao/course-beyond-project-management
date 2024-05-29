@@ -7,7 +7,7 @@
     </x-slot>
 
     <x-slot name="header">
-        <x-email::header-logo src="{{env('APP_URL')}}{{ Storage::url($course->filename_main_logo) }}" alt="{{ $course->domain }}" width="150" height="50" />
+        <x-email::header-logo src="{{ eduka_url($course->filename_main_logo) }}" alt="{{ $course->domain }}" width="150" height="50" />
         <!-- Alternatively, you could use the header title component like this: -->
         <!-- <x-email::header-title color="#333" href="https://example.com">[Product Name]</x-email::header-title> -->
     </x-slot>
