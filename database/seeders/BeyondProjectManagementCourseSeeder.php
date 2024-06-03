@@ -52,14 +52,10 @@ class BeyondProjectManagementCourseSeeder extends Seeder
         ]);
 
         // Add the 'course' filesystem disk.
-        push_eduka_filesystem_disk($course);
+        push_canonical_filesystem_disk($course->canonical);
 
         // Add twitter and logo images and update course.
-        $twitter = Storage::disk('eduka')
-            ->putFile(__DIR__.
-                      '/../assets/twitter.jpg');
-
-        $email = Storage::disk('eduka')
+        $email = Storage::disk($course->canonical)
             ->putFile(__DIR__.
                       '/../assets/email-logo.jpg');
 
