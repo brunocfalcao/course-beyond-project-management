@@ -46,6 +46,7 @@ class BeyondProjectManagementCourseSeeder extends Seeder
             'clarity_code' => null,
 
             'twitter_handle' => env('BPM_TWITTER'),
+
             'prelaunched_at' => now()->subHours(1),
             'launched_at' => now()->addDay(365),
 
