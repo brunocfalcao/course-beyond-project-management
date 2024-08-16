@@ -3,6 +3,7 @@
 namespace BeyondProjectManagement\Database\Seeders;
 
 use Eduka\Cube\Models\Course;
+use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
