@@ -2,7 +2,6 @@
 
 namespace BeyondProjectManagement\Database\Seeders;
 
-use Eduka\Cube\Models\Backend;
 use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
@@ -27,7 +26,8 @@ class BeyondProjectManagementCourseSeeder extends Seeder
             'description' => 'There is a lot more beyond project management',
             'canonical' => 'course-beyond-project-management',
             'domain' => env('BPM_DOMAIN'),
-            'provider_namespace' => 'BeyondProjectManagement\\BeyondProjectManagementServiceProvider',
+            'payments_gateway_class' => 'Eduka\Payments\PaymentProviders\Paddle\Paddle',
+            'service_provider_class' => 'BeyondProjectManagement\\BeyondProjectManagementServiceProvider',
             'backend_id' => $backend->id,
             'clarity_code' => env('BPM_CLARITY_CODE'),
 
@@ -62,7 +62,7 @@ class BeyondProjectManagementCourseSeeder extends Seeder
                       '/../assets/email-logo.jpg');
 
         $course->update([
-            'filename_email_logo' => $email,
+            'filename_logo' => $email,
         ]);
 
         $variant = Variant::create([
@@ -70,7 +70,7 @@ class BeyondProjectManagementCourseSeeder extends Seeder
             'canonical' => 'beyond-project-management',
             'description' => 'Beyond Project Management (standard version)',
             'course_id' => $course->id,
-            'lemon_squeezy_variant_id' => env('BPM_VARIANT_ID'),
+            'product_id' => env('BPM_VARIANT_ID'),
         ]);
 
         $course->update(['student_admin_id' => $student->id]);
