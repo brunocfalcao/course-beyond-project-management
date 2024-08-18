@@ -2,12 +2,11 @@
 
 namespace BeyondProjectManagement\Database\Seeders;
 
-use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Backend;
+use Eduka\Cube\Models\Course;
 use Eduka\Cube\Models\Student;
 use Eduka\Cube\Models\Variant;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Storage;
 
 class BeyondProjectManagementCourseSeeder extends Seeder
 {
@@ -56,15 +55,6 @@ class BeyondProjectManagementCourseSeeder extends Seeder
 
         // Add the 'course' filesystem disk.
         push_canonical_filesystem_disk($course->canonical);
-
-        // Add twitter and logo images and update course.
-        $email = Storage::disk($course->canonical)
-            ->putFile(__DIR__.
-                      '/../assets/email-logo.jpg');
-
-        $course->update([
-            'filename_logo' => $email,
-        ]);
 
         $variant = Variant::create([
             'name' => 'Beyond Project Management',
